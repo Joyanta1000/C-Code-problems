@@ -11,4 +11,5 @@ int main()
 		cout<<(k-(n+1)/2)*2<<endl;
 	}
 	return 0;
+//	Copied
 }
