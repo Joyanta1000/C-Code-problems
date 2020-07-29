@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1585577334 source:e:\dev c++\primeornot\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+
+1585576454 source:e:\dev c++\primeornot\trial.cpp
+	<iostream>
+	<bits/stdc++.h>
+
