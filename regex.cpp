@@ -1,22 +1,91 @@
-#include <iostream>
-#include <string>
-#include <regex>
+#include<bits/stdc++.h>
 
-int main ()
+using namespace std;
+
+int main()
 {
-  std::string s ("this subject has a submarine as a subsequence");
-  std::smatch m;
-  std::regex e ("\\b(sub)([^ ]*)");   // matches words beginning by "sub"
+    string a;
+    string s;
 
-  std::cout << "Target sequence: " << s << std::endl;
-  std::cout << "Regular expression: /\\b(sub)([^ ]*)/" << std::endl;
-  std::cout << "The following matches and submatches were found:" << std::endl;
+    bool t = false;
 
-  while (std::regex_search (s,m,e)) {
-    for (auto x:m) std::cout << x << " ";
-    std::cout << std::endl;
-    s = m.suffix().str();
-  }
+    int i,n,j;
 
-  return 0;
+    while(cin>>a)
+    {
+        n=a.length();
+
+        for(i=0;i<n;i++)
+        {
+
+            if(a[0]=='a')
+            {
+                i++;
+                if(a[i]>='d'&&a[i]<='z')
+            {
+                t = false;
+                break;
+            }
+            else{
+                    i--;
+                t = true;
+                while(a[i]=='a')
+                    {
+                        i++;
+                    }
+                if(a[i]=='b')
+                    {
+                        i++;
+                        if(a[i]!='c')
+                        {
+                            t = false;
+                            break;
+                        }
+                        else
+                        {
+                            if(a[i+1]=='a')
+                        {
+                            t = false;
+                            break;
+                        }
+                            if(a[i+1]=='b')
+                        {
+                                if(a[i+2]!='c')
+                            {
+                                t = false;
+                                break;
+                            }
+                        }
+                        else{
+                    t = true;
+                        }
+                        }
+                    }
+                    else if(a[i]=='c')
+                    {
+                        t = false;
+                        break;
+                    }
+            }
+            }
+
+            else
+            {
+                t = false;
+                break;
+            }
+
+        }
+
+        if(t==true)
+        {
+            cout<<"Accepted"<<endl;
+        }
+
+        else
+        {
+            cout<<"Rejected"<<endl;
+        }
+
+    }
 }
